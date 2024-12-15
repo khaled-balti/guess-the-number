@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two-Player Guess the Number</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 Two-Player Guess the Number!</h1>
+    <!-- Sign Up Phase -->
+    <div id="signUpForm">
+      <h2>Sign Up</h2>
+      <form id="signUp">
+        <input type="text" id="fullName" placeholder="Full Name" required>
+        <input type="text" id="usernameSignUp" placeholder="Username" required>
+        <input type="password" id="passwordSignUp" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="#" id="goToLogin">Login here</a></p>
+    </div>
+
+    <!-- Login Phase -->
+    <div id="loginForm" style="display: none;">
+      <h2>Login</h2>
+      <form id="login">
+        <input type="text" id="usernameLogin" placeholder="Username" required>
+        <input type="password" id="passwordLogin" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#" id="goToSignUp">Sign up here</a></p>
+    </div>
+
+    <!-- Game Phases (hidden by default) -->
+    <div id="gameContainer" style="display: none;">
+      <div id="setupPhase">
+        <p>Player 1: Enter a number between 1 and 100 (hidden).</p>
+        <input type="number" id="player1Input" placeholder="Enter your number..." min="1" max="100">
+        <button id="startGameButton">Start Game</button>
+      </div>
+
+      <div id="guessPhase" style="display: none;">
+        <p>Player 2: Guess the number!</p>
+        <input type="number" id="guessInput" placeholder="Enter your guess..." min="1" max="100">
+        <button id="guessButton">Guess</button>
+        <button id="resetButton">Restart</button>
+        <p id="message"></p>
+        <p id="attempts"></p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
